@@ -35,4 +35,25 @@ public class ClasseSystemInOut
 
 --------------------------------------------------------------------------------------------------------
 //Le no arquivo
-	
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+import java.util.Scanner;
+
+public class ClasseSystemInFile {
+	public static void main(String[] args) throws FileNotFoundException {
+		
+		//Caso não exista throws FileNotFoundException
+		InputStream arquivo = new FileInputStream("teste.txt");
+		
+		System.setIn(arquivo);
+		
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.println("nome: " + scan.nextLine());
+		System.out.println("nome: " + scan.nextLine());
+		System.out.println("nome: " + scan.nextLine());
+		
+	}
+}
+
