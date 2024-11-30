@@ -57,3 +57,22 @@ public class ClasseSystemInFile {
 	}
 }
 
+------------------------------------------------------------------------------------------------------------
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+public class TesteHashNext 
+{
+	public static void main(String[] args) throws FileNotFoundException 
+	{
+		File arquivo = new File("teste.txt");
+		Scanner scan = new Scanner(arquivo);
+		
+		while(scan.hasNext()) //confere se tem a proxima linha
+		{
+			System.out.println("nome: " + scan.nextLine());// printa a string da proxline
+		}
+	}
+}
+
