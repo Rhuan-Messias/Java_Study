@@ -10,6 +10,7 @@ public class ExemploSetCollection {
 		// hash ordena pela ordem do hashcode
 		// linked ordena na ordem de inserção
 		// Tree ordena pela ordem alfabética ou numérica
+		// A interface Set não permite inserir elementos duplicados (apenas ignora eles)
 		
 		Set<String> c_hashSet = new HashSet<>();
 		Set<String> c_linkedHashSet = new LinkedHashSet<>();
