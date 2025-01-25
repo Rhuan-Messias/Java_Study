@@ -1,0 +1,22 @@
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class ExemploQueueCollection {
+
+	public static void main(String[] args) {
+		// QUEUE First in First Out
+		
+		Queue<String> fila = new LinkedList<>();
+		
+		fila.offer("Laranja");
+		fila.offer("Limao");
+		fila.offer("Banana");
+		
+		System.out.println("LinkedList: " + fila);
+		System.out.println("Início da Lista: " + fila.peek());
+		System.out.println("Início da Lista: " + fila.poll());
+		System.out.println("Início da Lista: " + fila.peek());
+
+	}
+
+}
