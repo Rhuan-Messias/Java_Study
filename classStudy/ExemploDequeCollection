@@ -1,0 +1,25 @@
+import java.util.Queue;
+import java.util.ArrayDeque;
+import java.util.Deque;
+
+public class ExemploCollectionDeck {
+
+	public static void main(String[] args) {
+		// Queue do tipo deque --> deque é pilha
+		// uma Queue(fila) implementada com array de pilha (ArrayDeque)
+		
+		Deque<String> pilha = new ArrayDeque<>();
+		
+		pilha.addFirst(null);
+		pilha.addLast(null);
+
+		pilha.removeLast();
+		pilha.removeFirst();
+		
+		//espiar ou inspecionar
+		pilha.peek();
+		pilha.peekFirst();
+		pilha.peekLast();
+	}
+
+}
