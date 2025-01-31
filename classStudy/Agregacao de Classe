@@ -1,1 +1,86 @@
 
+public class Program {
+
+	public static void main(String[] args) {
+		
+		Monitor m1 = new Monitor("Dell");
+		Monitor m2 = new Monitor("Positivo");
+		
+		Computador c1 = new Computador("Dory");
+		Computador c2 = new Computador("Carol");
+		
+		System.out.println(c1);
+		System.out.println(c2);
+		
+		c1.addMonitor(m1);
+		c2.addMonitor(m2);
+		
+		System.out.println(c1);
+		System.out.println(c2);
+
+	}
+
+}
+
+----------------------------------------------------------
+
+public class Computador {
+	
+	private String dono;
+	private Monitor monitor; // associacao estruturante Computador -> Monitor
+	
+	public Computador(String dono) {
+		this.dono = dono;
+	}
+
+	public String getDono() {
+		return dono;
+	}
+
+	public void setDono(String dono) {
+		this.dono = dono;
+	}
+
+	
+	
+	@Override
+	public String toString() {
+		return "Computador [dono=" + dono + ", monitor=" + monitor + "]";
+	}
+
+	public boolean addMonitor (Monitor m) {
+		
+		if(m != null) {
+			this.monitor = m;
+			return true;
+		}
+		
+		return false;
+	}
+	
+	public boolean removeMonitor() {
+		this.monitor = null;
+		return true;
+	}
+	
+	
+}
+---------------------------------------------------------------------------------------
+
+
+public class Monitor 
+{
+	private String marca;
+	
+	public Monitor (String marca) 
+	{
+		this.marca = marca;
+	}
+	
+	@override
+	public String toString() {
+		return "Monitor [Marca=" + marca + "]";
+	}
+	
+}
+
