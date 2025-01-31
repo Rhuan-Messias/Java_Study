@@ -24,10 +24,13 @@ public class Program {
 
 ----------------------------------------------------------
 
+import java.util.Objects;
+
 public class Computador {
 	
 	private String dono;
 	private Monitor monitor; // associacao estruturante Computador -> Monitor
+	private Monitor monitor2;
 	
 	public Computador(String dono) {
 		this.dono = dono;
@@ -51,20 +54,54 @@ public class Computador {
 	public boolean addMonitor (Monitor m) {
 		
 		if(m != null) {
-			this.monitor = m;
-			return true;
+			if(this.monitor == null) {
+				this.monitor = m;
+				return true;
+			}else if(this.monitor2 == null) {
+				this.monitor2 = m;
+				return true;
+			}
+			
 		}
 		
 		return false;
 	}
 	
-	public boolean removeMonitor() {
-		this.monitor = null;
-		return true;
+	public boolean removeMonitor(Monitor m) {
+		
+		if (m != null) {
+			if(this.monitor.equals(m)) {
+				this.monitor = null;
+				return true;
+			}
+			if(this.monitor2.equals(m)) {
+				this.monitor2 = null;
+				return true;
+			}
+		}
+		return false;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(monitor, monitor2);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Computador other = (Computador) obj;
+		return Objects.equals(monitor, other.monitor) && Objects.equals(monitor2, other.monitor2);
 	}
 	
 	
 }
+
 ---------------------------------------------------------------------------------------
 
 
